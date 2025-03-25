@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainSectionComponent } from './main-section.component';
+import { LeftColumnComponent } from './left-column.component';
 
-describe('MainSectionComponent', () => {
-  let component: MainSectionComponent;
-  let fixture: ComponentFixture<MainSectionComponent>;
+describe('LeftColumnComponent', () => {
+  let component: LeftColumnComponent;
+  let fixture: ComponentFixture<LeftColumnComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainSectionComponent]
+      imports: [LeftColumnComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainSectionComponent);
+    fixture = TestBed.createComponent(LeftColumnComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
