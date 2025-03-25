@@ -1,0 +1,21 @@
+.about-me{
+  margin-top:65px;
+  padding-right: 103px;
+  p{
+    font-family: $rale;
+    line-height: 1.7;
+    padding-top:30px;
+    text-align: justify;
+    font-size: 26px;
+  }
+  h2{
+    font-size: 47px;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    justify-content: left;
+    font-family: $rale ;
+    display: flex;
+    padding-right: 5px;
+  }
+}

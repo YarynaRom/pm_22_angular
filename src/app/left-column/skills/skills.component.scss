@@ -1,0 +1,65 @@
+.icon-circle {
+  color: #29343a;
+  margin-right: 20px;
+  background-color: #02c5db;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skills {
+  margin-top: 110px;
+  justify-content: space-between;
+  padding-right: 103px;
+  align-items: center;
+  font-family: $rale;
+  color: #ffffff;
+  h2{
+    font-size: 40px;
+    align-items: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: $rale;
+    display: flex;
+    padding-right: 5px;
+    justify-content: left;
+  }
+}
+.skill {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  h6 {
+    font-size: 19px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
+.stars-container {
+  margin-top: -5px;
+  display: flex;
+  align-items: center;
+}
+
+.stars {
+  display: inline-flex;
+
+  .star {
+    font-size: 22px;
+    color: #ccc;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &.hovered {
+      color: #02c5db;
+    }
+
+    &.filled {
+      color: #02c5db;
+    }
+  }
+}
