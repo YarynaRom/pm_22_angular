@@ -2,7 +2,7 @@
   margin-top:65px;
   padding-right: 103px;
   p{
-    font-family: $rale;
+    //font-family: $rale;
     line-height: 1.7;
     padding-top:30px;
     text-align: justify;
@@ -14,8 +14,19 @@
     text-transform: uppercase;
     font-weight: 700;
     justify-content: left;
-    font-family: $rale ;
+    //font-family: $rale ;
     display: flex;
     padding-right: 5px;
   }
+}
+.icon-circle {
+  color: #29343a;
+  margin-right: 20px;
+  background-color: #02c5db;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

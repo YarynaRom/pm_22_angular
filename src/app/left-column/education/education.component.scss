@@ -6,7 +6,7 @@
     font-size: 47px;
     font-weight: 700;
     text-transform: uppercase;
-    font-family: $rale;
+    //font-family: $rale;
   }
 }
 .education-item {
@@ -27,7 +27,7 @@
   h3{
     font-size: 23px;
     text-transform: uppercase;
-    font-family: $rale;
+    //font-family: $rale;
   }
 }
 .year {
@@ -79,4 +79,13 @@
   width: 4px;
   height: 110px;
   background-color: #02c5db;
+}
+.left-col10 {
+  margin-top: 75px;
+  padding: 0;
+  background-color: #29343a;
+  color: white;
+}
+.right-col1 {
+  padding: 0;
 }

@@ -6,7 +6,7 @@
     font-size: 25px;
     margin: 10px 0;
     padding: 0;
-    font-family: $rale;
+    //font-family: $rale;
   }
 }
 .contact-header {
@@ -17,7 +17,7 @@
     font-size: 47px;
     font-weight: 700;
     text-transform: uppercase;
-    font-family: $rale;
+    //font-family: $rale;
   }
 }
 .contact-item {
@@ -77,4 +77,23 @@
   width: 4px;
   height: 40px;
   background-color: #02c5db;
+}
+.left-col30{
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.right-col3 {
+  background-color: #fff;
+  width: 50%;
+}
+.left-col4 {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25vh;
+}
+.right-col1 {
+  padding: 0;
 }

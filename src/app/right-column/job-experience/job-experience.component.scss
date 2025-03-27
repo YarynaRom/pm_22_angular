@@ -49,14 +49,14 @@
   p{
     text-align: left;
     font-size: 24px;
-    font-family: $rale;
+    //font-family: $rale;
   }
   h2{
     font-size: 47px;
     font-weight: 700;
     text-transform: uppercase;
     justify-content: left;
-    font-family: $rale;
+    //font-family: $rale;
   }
   h3{
     display: flex;
@@ -74,4 +74,12 @@
 }
 .job-item3 {
   padding-top: 40px;
+}
+.left-col3{
+  margin-top: 85px;
+  padding: 0;
+}
+.right-col2 {
+  padding-left: 0;
+  padding-right: 110px;
 }

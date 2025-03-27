@@ -13,3 +13,30 @@
   }
 
 }
+.resume {
+  width: 100%;
+  //height: 100vh;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.left-column {
+  padding-left: 115px;
+  padding-right: 0;
+  margin-right: 0;
+  background-color: #29343a;
+  color: white;
+  padding-bottom: 125px;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 110px;
+  padding-right: 0;
+  background-color: #fff;
+  width: 50%;
+}
