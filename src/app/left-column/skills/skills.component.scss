@@ -30,12 +30,12 @@
 .skill {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  //margin-top: 5px;
+  //margin-bottom: 15px;
   h6 {
     font-size: 19px;
     display: inline-block;
-    margin-bottom: 5px;
+    //margin-bottom: 5px;
   }
 }
 .stars-container {
@@ -62,4 +62,12 @@
       color: #02c5db;
     }
   }
+}
+.row {
+  display: flex;
+  align-items: flex-start; // Вирівнюємо по верхньому краю
+  gap: 20px; // Відстань між таймлайном і текстом
+}
+.skill-text{
+  //padding-top: 10px;
 }

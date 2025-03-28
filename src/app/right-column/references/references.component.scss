@@ -77,3 +77,8 @@
   padding-left: 0;
   padding-right: 110px;
 }
+.row {
+  display: flex;
+  align-items: flex-start; // Вирівнюємо по верхньому краю
+  gap: 20px; // Відстань між таймлайном і текстом
+}
