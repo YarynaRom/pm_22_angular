@@ -1,18 +1,21 @@
 <div class="about-me">
-  <div class="toggle-bth roll"><h2>
+  <div class="toggle-bth roll" (click)="toggleText()">
+    <h2>
     <div class="icon-circle">
-      <i class="fa-solid fa-user-tie icons"></i></div>About me</h2></div>
-  <div class="roll-block">
-    <p>
-      Lorem Ipsum is simply dummy text of the printing
-      and typesetting industry. Lorem Ipsum has been
-      the industry's standard dummy text ever since
-      the 1500s, when an unknown printer took a galley
-      of type.
-    </p>
-    <p>
-      It has survived not only five centuries, but the leap into electronic
-      typesetting unchanged.
+      <i class="fa-solid fa-user-tie icons"></i>
+    </div>About me</h2></div>
+  <div class="roll-block" *ngIf="isTextVisible">
+    <p *ngFor="let paragraph of paragraphs">
+      {{ paragraph }}
+<!--      Lorem Ipsum is simply dummy text of the printing-->
+<!--      and typesetting industry. Lorem Ipsum has been-->
+<!--      the industry's standard dummy text ever since-->
+<!--      the 1500s, when an unknown printer took a galley-->
+<!--      of type.-->
+<!--    </p>-->
+<!--    <p>-->
+<!--      It has survived not only five centuries, but the leap into electronic-->
+<!--      typesetting unchanged.-->
     </p>
   </div>
 </div>
