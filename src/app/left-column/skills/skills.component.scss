@@ -31,9 +31,9 @@
   display: flex;
   justify-content: space-between;
   //margin-top: 5px;
-  margin-bottom:25px;
+  margin-bottom:5px;
   h6 {
-    padding-right: 15px;
+    //padding-right: 5px;
     margin: 0;
     font-size: 19px;
     display: inline-block;
@@ -65,10 +65,17 @@
     }
   }
 }
+//.row {
+ // display: flex;
+  //align-items: flex-start; // Вирівнюємо по верхньому краю
+  //gap: 30px; // Відстань між таймлайном і текстом
+//}
 .row {
-  display: flex;
-  align-items: flex-start; // Вирівнюємо по верхньому краю
-  gap: 30px; // Відстань між таймлайном і текстом
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  //display: flex;
+  //flex-wrap: wrap; // Дозволяє переносити елементи на новий рядок
+  gap: 20px; // Додає простір між колонками
 }
 .skill-text{
   //padding-top: 10px;

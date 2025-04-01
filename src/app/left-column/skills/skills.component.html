@@ -1,97 +1,32 @@
 <div class="skills">
-  <div class="toggle-bth roll">
-    <h2><div class="icon-circle"><i class="fa-solid fa-chart-pie icons"></i></div>Skills</h2> </div>
+  <div class="toggle-btn roll">
+    <h2>
+      <div class="icon-circle">
+        <i class="fa-solid fa-chart-pie icons"></i>
+      </div>
+      Skills
+    </h2>
+  </div>
+
   <div class="roll-block">
     <div class="row">
-      <div class="col-lg-6 col-md-6">
+      <div class="col-lg-6 col-md-6" *ngFor="let skill of skills">
         <div class="skill">
           <div class="skill-text">
-            <h6>
-              Adobe Photoshop
-            </h6>
+            <h6>{{ skill.name }}</h6>
           </div>
           <div class="stars-container">
             <div class="stars">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
+              <span
+                class="star"
+                *ngFor="let star of [].constructor(5); let i = index"
+                [class.filled]="i < skill.level"
+                (click)="changeLevel(skill, i + 1)"> <!-- Виклик зміни рівня -->
+                &#9733;
+              </span>
             </div>
           </div>
         </div>
-
-        <div class="skill">
-          <div class="skill-text">
-            <h6>
-              Microsoft Word
-            </h6>
-          </div>
-          <div class="stars-container">
-            <div class="stars">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-text">
-            <h6>
-              HTML/CSS
-            </h6>
-          </div>
-          <div class="stars-container">
-            <div class="stars">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-lg-6 col-md-6">
-
-        <div class="skill">
-          <div class="skill-text">
-            <h6>
-              Adobe Illustrator
-            </h6>
-          </div>
-          <div class="stars-container">
-            <div class="stars">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-text">
-            <h6>
-              Microsoft PowerPoint
-            </h6>
-          </div>
-          <div class="stars-container">
-            <div class="stars">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
