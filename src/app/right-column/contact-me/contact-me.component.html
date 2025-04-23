@@ -1,55 +1,99 @@
 <div class="row">
+  <!-- Ліва колонка з таймлайном -->
   <div class="col-lg-2 left-col30">
     <div class="timeline">
       <div class="timeline-item">
-        <div class="toggle-bth roll">
+        <div class="toggle-btn roll">
           <div class="icon">
             <i class="fa-solid fa-user icons"></i>
-          </div> </div>
+          </div>
+        </div>
         <div class="line"></div>
       </div>
-      <div class="timeline-item">
-        <div class="circle"></div>
-        <div class="line"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="circle"></div>
-        <div class="line"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="circle"></div>
-        <div class="line3"></div>
-      </div>
+      <div class="timeline-item"><div class="circle"></div><div class="line"></div></div>
+      <div class="timeline-item"><div class="circle"></div><div class="line"></div></div>
+      <div class="timeline-item"><div class="circle"></div><div class="line3"></div></div>
     </div>
   </div>
+
+  <!-- Права колонка -->
   <div class="col-lg-10 right-col3">
     <div class="contact-me">
       <div class="contact-header">
-        <h2> Contact Me</h2>
+        <h2>Contact Me</h2>
       </div>
+
+      <!-- Контактна інформація -->
       <div class="roll-block">
         <div class="row">
           <div class="col-lg-2 left-col4">
-            <div class="icon-circle1">
-              <i class="fas fa-phone"></i></div>
-            <div class="icon-circle1">
-              <i class="fas fa-globe"></i></div>
-            <div class="icon-circle1">
-              <i class="fas fa-map-marker-alt"></i></div>
+            <div class="icon-circle1"><i class="fas fa-phone"></i></div>
+            <div class="icon-circle1"><i class="fas fa-globe"></i></div>
+            <div class="icon-circle1"><i class="fas fa-map-marker-alt"></i></div>
           </div>
+
           <div class="col-lg-10 right-col1">
-            <div class="contact-item">
-              <p>+1-718-310-5588 <br> +1-313-381-8167 </p>
-            </div>
-            <div class="contact-item">
-              <p>www.yourwebsite.com <br> yourinfo&#64;email.com </p>
-            </div>
-            <div class="contact-item">
-              <p>769 Prudence Street <br> Lincoln Park, MI 48146 </p>
-            </div>
+            <ng-container *ngIf="formSubmitted; else defaultContact">
+              <div class="contact-item">
+                <p>{{ contactForm.value.phone }}<br>+1-313-381-8167</p>
+              </div>
+              <div class="contact-item">
+                <p>{{ contactForm.value.email }}<br>yourinfo&#64;email.com</p>
+              </div>
+              <div class="contact-item">
+                <p>{{ contactForm.value.name }}<br>769 Prudence Street</p>
+              </div>
+            </ng-container>
+
+            <ng-template #defaultContact>
+              <div class="contact-item">
+                <p>+1-718-310-5588 <br> +1-313-381-8167</p>
+              </div>
+              <div class="contact-item">
+                <p>www.yourwebsite.com <br> yourinfo&#64;email.com</p>
+              </div>
+              <div class="contact-item">
+                <p>769 Prudence Street <br> Lincoln Park, MI 48146</p>
+              </div>
+            </ng-template>
           </div>
         </div>
       </div>
+
+      <!-- Форма -->
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mt-4">
+        <div class="form-group">
+          <label for="phone">Телефон:</label>
+          <input id="phone" type="text" formControlName="phone" class="form-control" required />
+          <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="error-message">
+            <p *ngIf="contactForm.get('phone')?.errors?.['required']">Поле обов'язкове</p>
+            <p *ngIf="contactForm.get('phone')?.errors?.['pattern']">Введіть коректний номер</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input id="email" type="email" formControlName="email" class="form-control" required />
+          <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error-message">
+            <p *ngIf="contactForm.get('email')?.errors?.['required']">Поле обов'язкове</p>
+            <p *ngIf="contactForm.get('email')?.errors?.['email']">Невірний формат email</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Ім’я:</label>
+          <input id="name" type="text" formControlName="name" class="form-control" required />
+          <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="error-message">
+            <p *ngIf="contactForm.get('name')?.errors?.['required']">Поле обов'язкове</p>
+            <p *ngIf="contactForm.get('name')?.errors?.['minlength']">Мінімум 3 символи</p>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary">Надіслати</button>
+      </form>
+
+      <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
     </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ResumeService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts/4';
+  private apiUrl = 'https://jsonplaceholder.typicode.com/posts/6';
   private postUrl = 'https://jsonplaceholder.typicode.com/posts';// Замінити на реальну адресу API
 
   constructor(private http: HttpClient) {}
@@ -37,4 +37,15 @@ export class ResumeService {
     console.error(errorMessage); // Вивід у консоль
     return throwError(() => new Error(errorMessage)); // Передаємо помилку далі
   }
+
+  // getContactData(): Observable<{ phone: string; email: string; name: string }> {
+  //   return this.http.get<{ phone: string; email: string; name: string }>('http://localhost:7777/contactMe')
+  //     .pipe(catchError(this.handleError));
+  // }
+  //
+  // sendContactData(data: { phone: string; email: string; name: string }): Observable<any> {
+  //   return this.http.post('http://localhost:7777/contactMe', data)
+  //     .pipe(catchError(this.handleError));
+  // }
+
 }
