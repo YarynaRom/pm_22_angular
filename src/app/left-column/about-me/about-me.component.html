@@ -1,18 +1,37 @@
+<!--&lt;!&ndash;<div class="about-me">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="toggle-bth roll" (click)="toggleText()">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h2>&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="icon-circle">&ndash;&gt;-->
+<!--&lt;!&ndash;        <i class="fa-solid fa-user-tie icons"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>About me&ndash;&gt;-->
+<!--&lt;!&ndash;    </h2>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  <div class="roll-block" *ngIf="isTextVisible">&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash; Відображення помилки &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Відображення тексту &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <p *ngFor="let paragraph of paragraphs">{{ paragraph }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
 <!--<div class="about-me">-->
 <!--  <div class="toggle-bth roll" (click)="toggleText()">-->
 <!--    <h2>-->
 <!--      <div class="icon-circle">-->
 <!--        <i class="fa-solid fa-user-tie icons"></i>-->
-<!--      </div>About me-->
+<!--      </div>-->
+<!--      About me-->
 <!--    </h2>-->
 <!--  </div>-->
 
 <!--  <div class="roll-block" *ngIf="isTextVisible">-->
-<!--    &lt;!&ndash; Відображення помилки &ndash;&gt;-->
 <!--    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>-->
 
-<!--    &lt;!&ndash; Відображення тексту &ndash;&gt;-->
 <!--    <p *ngFor="let paragraph of paragraphs">{{ paragraph }}</p>-->
+
+<!--    <textarea [(ngModel)]="newAboutMeText" placeholder="Введіть новий текст"></textarea>-->
+<!--    <button (click)="sendNewText()">Надіслати</button>-->
 <!--  </div>-->
 <!--</div>-->
 <div class="about-me">

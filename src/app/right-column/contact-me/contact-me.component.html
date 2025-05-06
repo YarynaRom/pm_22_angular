@@ -1,5 +1,4 @@
 <div class="row">
-  <!-- Ліва колонка з таймлайном -->
   <div class="col-lg-2 left-col30">
     <div class="timeline">
       <div class="timeline-item">
@@ -16,14 +15,12 @@
     </div>
   </div>
 
-  <!-- Права колонка -->
   <div class="col-lg-10 right-col3">
     <div class="contact-me">
       <div class="contact-header">
         <h2>Contact Me</h2>
       </div>
 
-      <!-- Контактна інформація -->
       <div class="roll-block">
         <div class="row">
           <div class="col-lg-2 left-col4">
@@ -33,29 +30,31 @@
           </div>
 
           <div class="col-lg-10 right-col1">
-            <ng-container *ngIf="formSubmitted; else defaultContact">
-              <div class="contact-item">
-                <p>{{ contactForm.value.phone }}<br>+1-313-381-8167</p>
-              </div>
-              <div class="contact-item">
-                <p>{{ contactForm.value.email }}<br>yourinfo&#64;email.com</p>
-              </div>
-              <div class="contact-item">
-                <p>{{ contactForm.value.name }}<br>769 Prudence Street</p>
-              </div>
-            </ng-container>
+            <!-- Дефолтні дані -->
+            <div class="contact-item">
+              <p>+1-718-310-5588 <br> +1-313-381-8167</p>
+            </div>
+            <div class="contact-item">
+              <p>www.yourwebsite.com <br> yourinfo&#64;email.com</p>
+            </div>
+            <div class="contact-item">
+              <p>769 Prudence Street <br> Lincoln Park, MI 48146</p>
+            </div>
 
-            <ng-template #defaultContact>
-              <div class="contact-item">
-                <p>+1-718-310-5588 <br> +1-313-381-8167</p>
+            <!-- Нові введені дані -->
+            <div *ngIf="showNewData">
+              <div *ngFor="let contact of contactDataList" class="contact-item">
+                <p>{{ contact.phone }}</p>
+                <p>{{ contact.email }}</p>
+                <p>{{ contact.name }}</p>
+                <hr />
               </div>
-              <div class="contact-item">
-                <p>www.yourwebsite.com <br> yourinfo&#64;email.com</p>
-              </div>
-              <div class="contact-item">
-                <p>769 Prudence Street <br> Lincoln Park, MI 48146</p>
-              </div>
-            </ng-template>
+            </div>
+
+            <!-- Кнопка для приховування/показу -->
+            <button type="button" class="btn btn-warning my-2" (click)="toggleNewData()">
+              {{ showNewData ? 'Приховати нові дані' : 'Показати нові дані' }}
+            </button>
           </div>
         </div>
       </div>
