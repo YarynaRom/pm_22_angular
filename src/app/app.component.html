@@ -1,24 +1,45 @@
-<!--<div class="container-fluid p-0">-->
-<!--  <div class="row resume" >-->
+<div *ngIf="!isAuthenticated" class="custom-wall">
+  <p class="custom-title">Welcome to my website! Please log in or register</p>
 
-<!--    <div style="display: flex;">-->
-<!--      <app-left-column class = "left-column"></app-left-column>-->
-<!--      <app-right-column class = "right-column"></app-right-column>-->
-<!--    </div>-->
+  <button *ngIf="!authState" (click)="openLogin()" class="custom-btn">LogIn</button>
+  <button *ngIf="!authState" (click)="openRegister()" class="custom-btn">Register</button>
 
-<!--  </div>-->
-<!--</div>>-->
+  <!-- Register -->
+  <div *ngIf="showRegister" class="modal-backdrop">
+    <div>
+      <app-register
+        (registerSuccess)="onLoginSuccess()"
+        (switchToLogin)="switchToLogin()"
+      ></app-register>
+      <button (click)="closeModals()" class="custom-btn">Close window</button>
+    </div>
+  </div>
 
-<!--<div class="row resume" >-->
+  <!-- Login -->
+  <div *ngIf="showLogin" class="modal-backdrop">
+    <div>
+      <app-login
+        (loginSuccess)="onLoginSuccess()"
+        (switchToRegister)="switchToRegister()"
+      ></app-login>
+      <button (click)="closeModals()" class="custom-btn">Close window</button>
+    </div>
+  </div>
+</div>
 
-<!--  <div class=" resume" style="display: flex;">-->
-<!--    <app-left-column class = "left-column"></app-left-column>-->
-<!--    <app-right-column class = "right-column"></app-right-column>-->
-<!--  </div>-->
+<!-- Authenticated View -->
+<div *ngIf="isAuthenticated" class="container">
+  <button (click)="logout()" class="custom-btn">LogOut</button>
 
-<!--</div>-->
+  <header>
+    <p>Welcome, {{ username }}!</p>
+    <p *ngIf="role === 'admin'">Admin Panel</p>
+  </header>
 
-<div class=" resume" style="display: flex;">
-  <app-left-column class = "left-column"></app-left-column>
-  <app-right-column class = "right-column"></app-right-column>
+  <app-admin *ngIf="role === 'admin'"></app-admin>
+
+  <div class="resume" style="display: flex;">
+    <app-left-column class="left-column"></app-left-column>
+    <app-right-column class="right-column"></app-right-column>
+  </div>
 </div>

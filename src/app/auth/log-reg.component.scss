@@ -1,0 +1,21 @@
+$black: #000;
+$white: #ffffff;
+
+.custom-wall{
+  background-color: $white;
+}
+.custom-btn {
+  background-color: #ffc0cb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.custom-title {
+  background-color: #ffc0cb;
+  color: white;
+  padding: 1% 2% 1% 2%;
+  font-size: 35px;
+}
